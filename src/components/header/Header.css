@@ -1,5 +1,7 @@
 .anticon svg {
 	color: #fff;
+	width: 30px;
+	height: 30px;
 }
 
 .ant-drawer-right > .ant-drawer-content-wrapper {
