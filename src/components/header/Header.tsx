@@ -2,6 +2,7 @@ import {useState} from 'react';
 import SideNav from './SideNav';
 import './Header.css';
 import NavLists from './NavLists';
+import {Link} from 'react-router-dom';
 
 const Header = () => {
 	const [openMenu, setOpenMenu] = useState(false);
@@ -9,9 +10,12 @@ const Header = () => {
 	return (
 		<div className="bg-black">
 			<div className="container mx-auto">
-				<div className="header  text-white shadow-md flex items-center justify-between px-8 py-02">
+				<div className="header  text-white shadow-md flex items-center justify-between px-8 py-5 py-02 ">
 					{/* <!-- logo --> */}
-					<h1 className=" text-primary">logo</h1>
+					<Link to={'/'} className="">
+						<span className="text-white text-3xl md:text-5xl font-bold">Pro</span>
+						<span className="text-primary text-2xl md:text-3xl font-bold">Gear</span>
+					</Link>
 
 					{/* <!-- navigation --> */}
 					<nav className="nav font-semibold text-lg">
@@ -20,13 +24,11 @@ const Header = () => {
 						</ul>
 					</nav>
 
-					{/* 
-                    Cart Buton  
-                    */}
-
 					{/* icon */}
 					<div className="flex justify-center items-center">
 						<div>
+							{/* Cart Buton   */}
+
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								fill="none"
@@ -42,6 +44,7 @@ const Header = () => {
 								/>
 							</svg>
 						</div>
+						{/* mobile menu icon  */}
 						<div className="block lg:hidden cursor-pointer ml-auto relative w-12 h-12 p-4">
 							<svg
 								onClick={() => setOpenMenu(!openMenu)}

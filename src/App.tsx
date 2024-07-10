@@ -1,9 +1,9 @@
-import Header from './components/header/Header';
+import MainLayout from './components/layout/MainLayout';
 
 function App() {
 	return (
 		<div>
-			<Header />
+			<MainLayout />
 		</div>
 	);
 }

@@ -1,19 +1,27 @@
-import {Link, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 const NavLists = () => {
 	return (
 		<>
-			<li className="p-2 text-primary transition-all duration-500 cursor-pointer">
-				<NavLink to={'/'}>Home</NavLink>
+			<li className="p-2">
+				<NavLink className={' hover:text-primary transition-all duration-400'} to={'/'} end>
+					Home
+				</NavLink>
 			</li>
-			<li className="p-2 hover:text-primary transition-all duration-500 cursor-pointer">
-				<Link to={''}>About Us</Link>
+			<li className="p-2">
+				<NavLink className={'hover:text-primary transition-all duration-400'} to={'/about-us'}>
+					About Us
+				</NavLink>
 			</li>
-			<li className="p-2  hover:text-primary transition-all duration-500 cursor-pointer">
-				<a href="">Products</a>
+			<li className="p-2">
+				<NavLink className={'hover:text-primary transition-all duration-400'} to="/products">
+					Products
+				</NavLink>
 			</li>
-			<li className="p-2  hover:text-primary transition-all duration-500 cursor-pointer">
-				<a href="">Manage Products </a>
+			<li className="p-2">
+				<NavLink className={'hover:text-primary transition-all duration-400'} to="/manage-products">
+					Manage Products{' '}
+				</NavLink>
 			</li>
 		</>
 	);

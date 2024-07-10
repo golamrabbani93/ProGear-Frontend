@@ -10,8 +10,7 @@ const SideNav: React.FC<SideNavProps> = ({openMenu, setOpenMenu}) => {
 	return (
 		<Drawer
 			className="!w-8/12 !ml-auto !bg-black text-white"
-			title="Basic Drawer"
-			onClose={() => setOpenMenu(!openMenu)}
+			onClick={() => setOpenMenu(!openMenu)}
 			open={openMenu}
 		>
 			<ul
