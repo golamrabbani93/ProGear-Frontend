@@ -1,0 +1,10 @@
+.anticon svg {
+	color: #fff;
+}
+
+.ant-drawer-right > .ant-drawer-content-wrapper {
+	box-shadow: none;
+}
+a:hover {
+	color: #e2211c;
+}
