@@ -10,8 +10,7 @@ const CardData = () => {
 						<div className="relative overflow-hidden">
 							<Link to={`/shop/product/id`}>
 								<img
-									className=" md:h-[300px]"
-									src="https://st.hzcdn.com/fimgs/3031ff3109e7a5a9_1837-w458-h458-b1-p0--.jpg"
+									src="https://i.ibb.co/QjX7zMF/pexels-enginakyurt-3019018.jpg"
 									alt={'data?.name'}
 								/>
 							</Link>

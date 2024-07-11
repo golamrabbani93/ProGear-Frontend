@@ -8,7 +8,7 @@ const NewArrival = () => {
 					<h2 className="text-2xl text-primary font-bold uppercase">The New Arrivals</h2>
 				</div>
 
-				<div className="grid grid-cols-4 gap-4 mt-5">
+				<div className="grid md:grid-cols-4 gap-4 mt-5">
 					<CardData />
 					<CardData />
 					<CardData />
