@@ -29,7 +29,7 @@ const SideCart: React.FC<SideNavProps> = ({openCart, setOpenCart}) => {
 				</div>
 				<div className="mt-6">
 					<Link to={''}>
-						<ButtonFull />
+						<ButtonFull text={'view cart'} />
 					</Link>
 				</div>
 			</Drawer>
