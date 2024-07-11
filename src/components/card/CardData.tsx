@@ -2,6 +2,7 @@ import {Card} from 'antd';
 import {Link} from 'react-router-dom';
 import {addProduct, TProduct} from '../../redux/features/cart/cartSlice';
 import {useAppDispatch} from '../../redux/hooks';
+import {toast} from 'sonner';
 
 interface CardDataProps {
 	item: TProduct;
@@ -9,6 +10,13 @@ interface CardDataProps {
 
 const CardData: React.FC<CardDataProps> = ({item}) => {
 	const dispatch = useAppDispatch();
+	const addCart = () => {
+		dispatch(addProduct(item));
+		toast.success('Product Added In The Cart', {
+			position: 'top-center',
+			duration: 2000,
+		});
+	};
 	return (
 		<div>
 			<div className="flex justify-center">
@@ -22,7 +30,7 @@ const CardData: React.FC<CardDataProps> = ({item}) => {
 							<div className="action-link">
 								<div>
 									<label
-										onClick={() => dispatch(addProduct(item))}
+										onClick={addCart}
 										className="text-white hover:text-primary font-bold uppercase transition duration-500 cursor-pointer"
 									>
 										Add to Cart

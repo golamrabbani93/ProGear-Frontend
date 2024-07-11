@@ -6,11 +6,14 @@ import {Link} from 'react-router-dom';
 import {Badge} from 'antd';
 import SideCart from './SideCart/SideCart';
 import Search from './Seacrh/Search';
+import {useAppSelector} from '../../redux/hooks';
+import {getCurrentCart} from '../../redux/features/cart/cartSlice';
 
 const Header = () => {
 	const [openMenu, setOpenMenu] = useState(false);
 	const [openCart, setOpenCart] = useState(false);
 	const [openSearch, setOpenSearch] = useState(false);
+	const carts = useAppSelector(getCurrentCart);
 
 	return (
 		<div className="bg-black">
@@ -53,7 +56,7 @@ const Header = () => {
 						</div>
 						<div className="mx-3">
 							{/* Cart Buton   */}
-							<Badge count={1} className="">
+							<Badge count={carts?.length | 0} className="">
 								<svg
 									onClick={() => setOpenCart(!openCart)}
 									xmlns="http://www.w3.org/2000/svg"

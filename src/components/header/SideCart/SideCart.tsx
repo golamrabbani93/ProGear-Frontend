@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import ButtonFull from '../../ui/ButtonFull';
 import {useAppSelector} from '../../../redux/hooks';
 import {getCurrentCart, TProduct} from '../../../redux/features/cart/cartSlice';
+import UseCartTotal from '../../../hooks/UseCartTotal';
 
 interface SideNavProps {
 	openCart: boolean;
@@ -11,7 +12,7 @@ interface SideNavProps {
 }
 const SideCart: React.FC<SideNavProps> = ({openCart, setOpenCart}) => {
 	const carts = useAppSelector(getCurrentCart);
-	console.log('🚀🚀: carts', carts);
+	const total = UseCartTotal(carts);
 	return (
 		<div className="!w-[500px]">
 			<Drawer
@@ -25,22 +26,22 @@ const SideCart: React.FC<SideNavProps> = ({openCart, setOpenCart}) => {
 
 					<div className="mt-8">
 						{/* !single Cart List */}
-						{carts.products?.length > 0 ? (
-							carts?.products?.map((item: TProduct) => <SingleCart key={item._id} item={item} />)
+						{carts?.length > 0 ? (
+							carts?.map((item: TProduct) => <SingleCart key={item._id} item={item} />)
 						) : (
 							<h2 className="font-bold uppercase text-primary">No Items Found</h2>
 						)}
 					</div>
 				</div>
 
-				{carts?.products?.length > 0 && (
+				{carts?.length > 0 && (
 					<div className="flex justify-between mx-2 mt-6">
 						<h2 className="uppercase text-2xl text-white font-bold">Subtotal:</h2>
-						<h2 className="uppercase text-2xl text-white font-bold">200</h2>
+						<h2 className="uppercase text-2xl text-white font-bold">${total}</h2>
 					</div>
 				)}
 
-				{carts?.products?.length > 0 ? (
+				{carts?.length > 0 ? (
 					<div className="mt-6">
 						<Link to={''}>
 							<ButtonFull text={'view cart'} />
