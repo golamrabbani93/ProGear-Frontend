@@ -4,7 +4,6 @@ import {useGetAllProductsQuery} from '../../../redux/features/product/productApi
 
 const NewArrival = () => {
 	const {data, isLoading} = useGetAllProductsQuery({pollingInterval: 3000});
-	console.log('🚀🚀: NewArrival -> data', data);
 	if (isLoading) {
 		return <h2>Loading...........</h2>;
 	}

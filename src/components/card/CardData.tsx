@@ -1,11 +1,14 @@
 import {Card} from 'antd';
 import {Link} from 'react-router-dom';
-import {TProduct} from '../../redux/features/cart/cart';
+import {addProduct, TProduct} from '../../redux/features/cart/cart';
+import {useAppDispatch} from '../../redux/hooks';
 
 interface CardDataProps {
 	item: TProduct;
 }
+
 const CardData: React.FC<CardDataProps> = ({item}) => {
+	const dispatch = useAppDispatch();
 	return (
 		<div>
 			<div className="flex justify-center">
@@ -18,7 +21,10 @@ const CardData: React.FC<CardDataProps> = ({item}) => {
 
 							<div className="action-link">
 								<div>
-									<label className="text-white hover:text-primary font-bold uppercase transition duration-500 cursor-pointer">
+									<label
+										onClick={() => dispatch(addProduct(item))}
+										className="text-white hover:text-primary font-bold uppercase transition duration-500 cursor-pointer"
+									>
 										Add to Cart
 									</label>
 								</div>
