@@ -1,0 +1,8 @@
+.search > .ant-drawer-content-wrapper {
+	width: 100vw !important;
+	height: 100vh !important;
+}
+
+.ant-drawer-content-wrapper {
+	height: 100vh !important;
+}
