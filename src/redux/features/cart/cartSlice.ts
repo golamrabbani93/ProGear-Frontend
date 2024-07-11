@@ -1,4 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {RootState} from '../../store';
 
 export interface TProduct {
 	_id?: string;
@@ -12,7 +13,7 @@ export interface TProduct {
 	quantity: number;
 	stock?: boolean;
 }
-interface ProductsState {
+export interface ProductsState {
 	products: TProduct[];
 }
 
@@ -36,4 +37,5 @@ export const cartSlice = createSlice({
 });
 export const {addProduct} = cartSlice.actions;
 
+export const getCurrentCart = (state: RootState) => state.cart;
 export default cartSlice.reducer;

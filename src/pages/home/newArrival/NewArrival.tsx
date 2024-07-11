@@ -1,5 +1,5 @@
 import CardData from '../../../components/card/CardData';
-import {TProduct} from '../../../redux/features/cart/cart';
+import {TProduct} from '../../../redux/features/cart/cartSlice';
 import {useGetAllProductsQuery} from '../../../redux/features/product/productApi';
 
 const NewArrival = () => {

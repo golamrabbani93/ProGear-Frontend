@@ -1,30 +1,32 @@
-const SingleCart = () => {
+import {TProduct} from '../../../redux/features/cart/cartSlice';
+
+interface CartDataProps {
+	item: TProduct;
+}
+
+const SingleCart: React.FC<CartDataProps> = ({item}) => {
 	return (
 		<div>
-			<div className="self-stretch flex-col justify-start items-start gap-5 flex">
+			<div className="self-stretch flex-col justify-start items-start gap-5 flex mt-4">
 				<div className="self-stretch justify-between items-center inline-flex">
 					<div className="justify-start items-center flex">
-						<div className="w-[110px] pr-5 flex-col justify-start items-start inline-flex">
-							<div className="self-stretch h-[103.25px] p-[0.80px] border border-gray-200 flex-col justify-center items-start flex">
-								<img
-									alt=""
-									className="w-[88.40px] h-[101.65px] relative"
-									src="https://st.hzcdn.com/fimgs/6af1bed00748b671_1591-w458-h458-b1-p0--.jpg"
-								/>
+						<div className="w-[88.40px] h-full pr-5 flex-col justify-start items-start inline-flex">
+							<div className="self-stretch h-[80px] w-[88.40px] p-[0.80px] flex-col justify-center items-start flex ">
+								<img alt="" className="w-[88.40px] h-[80px] relative" src={item.image} />
 							</div>
 						</div>
-						<div className="flex-col justify-start items-start inline-flex">
+						<div className="flex-col justify-start items-start inline-flex ml-3">
 							<div className="self-stretch h-[24.50px] flex-col justify-start items-start flex">
-								<h2 className="text-neutral-500 text-sm font-bold  leading-normal">name</h2>
+								<h2 className="text-neutral-500 text-sm font-bold  leading-normal">{item.name}</h2>
 							</div>
 							<div className="self-stretch h-[24.50px] pr-[34.10px] flex-col justify-start items-start flex">
 								<h3 className="text-neutral-500 text-sm font-normal mt-5  leading-normal">
-									{1} x ${20 || 30}
+									{item.quantity} x ${item.price}
 								</h3>
 							</div>
 						</div>
 					</div>
-					<div className="w-[11px] pt-[5.60px] pb-[4.90px] flex-col justify-start items-end inline-flex">
+					<div className="w-[11px] pt-[5.60px] pb-[4.90px] flex-col justify-start items-end inline-flex ml-8">
 						<button className="text-right text-red-500 hover:text-red-600 cursor-pointer">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"

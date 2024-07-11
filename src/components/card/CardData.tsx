@@ -1,6 +1,6 @@
 import {Card} from 'antd';
 import {Link} from 'react-router-dom';
-import {addProduct, TProduct} from '../../redux/features/cart/cart';
+import {addProduct, TProduct} from '../../redux/features/cart/cartSlice';
 import {useAppDispatch} from '../../redux/hooks';
 
 interface CardDataProps {
