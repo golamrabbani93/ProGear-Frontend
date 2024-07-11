@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
-interface TProduct {
-	id?: string;
+export interface TProduct {
+	_id?: string;
 	name: string;
 	description: string;
 	image: string;
@@ -10,7 +10,7 @@ interface TProduct {
 	rating?: number;
 	brand: string;
 	quantity: number;
-	inStock?: boolean;
+	stock?: boolean;
 }
 interface ProductsState {
 	products: TProduct[];
@@ -24,7 +24,7 @@ export const cartSlice = createSlice({
 	initialState,
 	reducers: {
 		addProduct: (state, action: PayloadAction<TProduct>) => {
-			const existingProduct = state.products.find((product) => product.id === action.payload.id);
+			const existingProduct = state.products.find((product) => product._id === action.payload._id);
 
 			if (existingProduct) {
 				existingProduct.quantity += action.payload.quantity;
