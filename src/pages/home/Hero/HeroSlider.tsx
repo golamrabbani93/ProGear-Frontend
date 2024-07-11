@@ -14,7 +14,7 @@ const HeroSlider = () => {
 				<div style={contentStyle} className={`banner-1 text-white relative`}>
 					<div className="banner__image relative ">
 						<img
-							className="h-[90vh] w-full object-cover"
+							className="h-[90vh] w-full objectImg"
 							src="https://i.ibb.co/0QVh6VP/banner-4.jpg"
 							alt=""
 						/>
@@ -47,7 +47,7 @@ const HeroSlider = () => {
 				<div style={contentStyle} className={`banner-1 text-white relative`}>
 					<div className="banner__image relative ">
 						<img
-							className="h-[90vh] w-full object-cover"
+							className="h-[90vh] w-full objectImg"
 							src="https://i.ibb.co/y599RsZ/banner-3.jpg"
 							alt=""
 						/>
@@ -80,7 +80,7 @@ const HeroSlider = () => {
 				<div style={contentStyle} className={`banner-1 text-white relative`}>
 					<div className="banner__image relative ">
 						<img
-							className="h-[90vh] w-full object-cover"
+							className="h-[90vh] w-full objectImg"
 							src="https://i.ibb.co/yRb2VWB/banner-1.jpg"
 							alt=""
 						/>

@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.objectImg {
+	object-fit: initial;
+}
 .action-link {
 	position: absolute;
 	bottom: 0;
