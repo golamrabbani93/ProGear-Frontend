@@ -4,7 +4,6 @@ import {TCategory} from '../../../home/category/Category';
 
 const Category = () => {
 	const param = useParams();
-	console.log('🚀🚀: Category -> param', param);
 	const {data, isLoading} = useGetAllGategoryQuery(undefined);
 
 	if (isLoading) {

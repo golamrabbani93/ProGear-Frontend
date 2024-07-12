@@ -1,12 +1,24 @@
-import {useParams} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import BreadCrumb from '../../components/BreadCrumb/BreadCrumb';
-import {useGetAllProductsQuery} from '../../redux/features/product/productApi';
-
+import productsApi, {useGetAllProductsQuery} from '../../redux/features/product/productApi';
 import Products from './products/Products';
 import Category from './SideBar/Category/Category';
+import FilterByPrize from './SideBar/FilterByPrize/FilterByPrize';
+import {useState} from 'react';
+import Search from './SideBar/Search/Search';
+import {Button} from 'antd';
+import {useAppDispatch} from '../../redux/hooks';
 
 const Shop = () => {
-	const query = useParams();
+	const dispatch = useAppDispatch();
+	const {name} = useParams<{name?: string}>();
+	const navigate = useNavigate();
+	const [price, setPrice] = useState<string | undefined>(undefined);
+	undefined;
+	const [search, setSearch] = useState<string | undefined>(undefined);
+
+	const categoryName = name;
+
 	const items = [
 		{
 			name: 'Home',
@@ -18,7 +30,14 @@ const Shop = () => {
 		},
 	];
 
-	const {data} = useGetAllProductsQuery({category: query.name});
+	const {data} = useGetAllProductsQuery({category: categoryName, sort: price, searchTerm: search});
+
+	const handleClaerFilter = () => {
+		setPrice(undefined);
+		setSearch(undefined);
+		dispatch(productsApi.util.resetApiState());
+		navigate('/shop');
+	};
 	return (
 		<div>
 			<BreadCrumb items={items} />
@@ -26,47 +45,22 @@ const Shop = () => {
 				<div className="shop-main grid grid-cols-1 md:grid-cols-4 gap-4 mx-8 md:mx-12 xl:mx-20">
 					{/* !left side bar */}
 					<div className="left-side">
+						<Search search={search} setSearch={setSearch} />
 						<Category></Category>
-						{/* <FilterByPrize
-							minValue={minValue}
-							maxValue={maxValue}
-							handleInputPrize={handleInputPrize}
-						></FilterByPrize> */}
+						<FilterByPrize setPrice={setPrice}></FilterByPrize>
+
+						<Button
+							onClick={handleClaerFilter}
+							className="bg-primary border-0 hover:!bg-secondary !text-white font-bold w-full uppercase mt-20"
+						>
+							Clear All Filter
+						</Button>
 					</div>
 					{/* !right side bar */}
 					<div className="right-sid md:col-start-2 md:col-end-5">
 						<Products items={data}></Products>
 					</div>
 				</div>
-				{
-					// <div className="text-center mt-12">
-					// 	<button
-					// 		className="text-black p-2 m-2 rounded-md w-10 hover:text-primary transition-all disabled:opacity-50"
-					// 		onClick={() => setPage(page - 1)}
-					// 		disabled={page === 0}
-					// 	>
-					// 		<FaArrowLeft />
-					// 	</button>
-					// 	{[...Array(totalPages).keys()].map((pg) => (
-					// 		<button
-					// 			onClick={() => setPage(pg)}
-					// 			key={pg}
-					// 			className={`${
-					// 				page === pg ? 'bg-primary text-white' : ' bg-black text-white'
-					// 			} p-2 m-2 rounded-md w-10 hover:bg-primary hover:text-white transition-all`}
-					// 		>
-					// 			{pg + 1}
-					// 		</button>
-					// 	))}
-					// 	<button
-					// 		onClick={() => setPage(page + 1)}
-					// 		className="text-black p-2 m-2 rounded-md w-10 hover:text-primary transition-all disabled:opacity-50"
-					// 		disabled={totalPages - 1 === page || page === totalPages}
-					// 	>
-					// 		<FaArrowRight />
-					// 	</button>
-					// </div>
-				}
 			</div>
 		</div>
 	);
