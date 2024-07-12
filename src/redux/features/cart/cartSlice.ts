@@ -2,7 +2,7 @@ import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {RootState} from '../../store';
 
 export interface TProduct {
-	_id?: string;
+	_id: string;
 	name: string;
 	description: string;
 	image: string;
@@ -33,9 +33,18 @@ export const cartSlice = createSlice({
 				state.products.push({...action.payload});
 			}
 		},
+		updateQuantity: (state, action) => {
+			const existingProduct = state.products.find((product) => product._id === action.payload._id);
+			if (existingProduct) {
+				existingProduct.quantity = Number(action.payload.value);
+			}
+		},
+		deleteProduct: (state, action) => {
+			state.products = state.products.filter((product) => product._id !== action.payload._id);
+		},
 	},
 });
-export const {addProduct} = cartSlice.actions;
+export const {addProduct, updateQuantity, deleteProduct} = cartSlice.actions;
 
 export const getCurrentCart = (state: RootState) => state.cart.products;
 export default cartSlice.reducer;

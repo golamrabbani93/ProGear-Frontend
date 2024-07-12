@@ -3,11 +3,9 @@
 @tailwind utilities;
 
 .objectImg {
-	object-fit: initial;
-}
-.objectImg2 {
 	object-fit: cover;
 }
+
 .action-link {
 	position: absolute;
 	bottom: 0;

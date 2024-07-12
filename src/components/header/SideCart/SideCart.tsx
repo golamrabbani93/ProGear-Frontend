@@ -43,7 +43,7 @@ const SideCart: React.FC<SideNavProps> = ({openCart, setOpenCart}) => {
 
 				{carts?.length > 0 ? (
 					<div className="mt-6">
-						<Link to={''}>
+						<Link to={'/shop/cart'}>
 							<ButtonFull text={'view cart'} />
 						</Link>
 					</div>

@@ -81,7 +81,7 @@ const HeroSlider = () => {
 					<div className="banner__image relative ">
 						<img
 							className="h-[90vh] w-full objectImg"
-							src="https://i.ibb.co/yRb2VWB/banner-1.jpg"
+							src="https://i.ibb.co/Km0hLfp/full-sc-img-5.jpg"
 							alt=""
 						/>
 					</div>
