@@ -14,8 +14,8 @@ const NavLists = () => {
 				</NavLink>
 			</li>
 			<li className="p-2">
-				<NavLink className={'hover:text-primary transition-all duration-400'} to="/products">
-					Products
+				<NavLink className={'hover:text-primary transition-all duration-400'} to="/shop">
+					Shop
 				</NavLink>
 			</li>
 			<li className="p-2">

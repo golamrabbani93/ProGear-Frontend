@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom';
 import './Category.css';
 import {useGetAllGategoryQuery} from '../../../redux/features/category/CategoryApi';
 
-type TCategory = {
+export type TCategory = {
 	image: string;
 	name: string;
 	_id: string;

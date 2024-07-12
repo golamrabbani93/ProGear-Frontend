@@ -33,7 +33,7 @@ const BreadCrumb: React.FC<TBreadcumb> = ({items}) => {
 								<svg
 									stroke="currentColor"
 									fill="currentColor"
-									stroke-width="0"
+									strokeWidth="0"
 									viewBox="0 0 24 24"
 									className="mx-2 !text-white"
 									height="1em"
@@ -43,7 +43,7 @@ const BreadCrumb: React.FC<TBreadcumb> = ({items}) => {
 									<path
 										fill="none"
 										stroke="#FFF"
-										stroke-width="2"
+										strokeWidth="2"
 										d="M2,12 L22,12 M13,3 L22,12 L13,21"
 									></path>
 								</svg>
