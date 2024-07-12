@@ -1,14 +1,14 @@
 import BreadCrumb from '../../components/BreadCrumb/BreadCrumb';
 
-const AboutUs = () => {
+const Products = () => {
 	const items = [
 		{
 			name: 'Home',
 			path: '/',
 		},
 		{
-			name: 'About Us',
-			path: '/about-us',
+			name: 'Products',
+			path: '/product',
 		},
 	];
 	return (
@@ -18,4 +18,4 @@ const AboutUs = () => {
 	);
 };
 
-export default AboutUs;
+export default Products;

@@ -9,7 +9,6 @@ type TCategory = {
 };
 const Category = () => {
 	const {data} = useGetAllGategoryQuery(undefined);
-	console.log('🚀🚀: Category -> data', data);
 	return (
 		<div className="mb-14 px-2">
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
