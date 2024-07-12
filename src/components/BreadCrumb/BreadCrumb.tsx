@@ -14,7 +14,7 @@ const BreadCrumb: React.FC<TBreadcumb> = ({items}) => {
 	const filteredItems = items.filter(Boolean);
 	const breadHeadName = filteredItems.slice(-1)[0].name;
 	return (
-		<div className="text-center bg-black text-white w-full h-96 flex justify-center items-center flex-col">
+		<div className="text-center bg-black text-white w-full h-64 flex justify-center items-center flex-col">
 			<div>
 				<h2 className="text-5xl uppercase font-bold">{breadHeadName}</h2>
 			</div>
