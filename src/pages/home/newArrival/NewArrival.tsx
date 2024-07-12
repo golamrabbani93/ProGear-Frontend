@@ -1,11 +1,12 @@
 import CardData from '../../../components/card/CardData';
+import Loader from '../../../components/Loader/Loader';
 import {TProduct} from '../../../redux/features/cart/cartSlice';
 import {useGetAllProductsQuery} from '../../../redux/features/product/productApi';
 
 const NewArrival = () => {
 	const {data, isLoading} = useGetAllProductsQuery({sort: ''}, {pollingInterval: 3000});
 	if (isLoading) {
-		return <h2>Loading...........</h2>;
+		return <Loader />;
 	}
 	return (
 		<section className="container mx-auto my-14 overflow-hidden">
