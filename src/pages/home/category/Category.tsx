@@ -14,7 +14,7 @@ const Category = () => {
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
 				{data?.data?.map((item: TCategory) => (
 					<Link
-						to={`/shop/category/category?.name.toLowerCase()`}
+						to={`/shop/category/${item?.name.toLowerCase()}`}
 						className="category-item"
 						key={item?._id}
 					>

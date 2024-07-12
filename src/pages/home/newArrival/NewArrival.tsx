@@ -3,7 +3,7 @@ import {TProduct} from '../../../redux/features/cart/cartSlice';
 import {useGetAllProductsQuery} from '../../../redux/features/product/productApi';
 
 const NewArrival = () => {
-	const {data, isLoading} = useGetAllProductsQuery({pollingInterval: 3000});
+	const {data, isLoading} = useGetAllProductsQuery({sort: ''}, {pollingInterval: 3000});
 	if (isLoading) {
 		return <h2>Loading...........</h2>;
 	}
@@ -15,7 +15,7 @@ const NewArrival = () => {
 				</div>
 
 				<div className="grid md:grid-cols-4 gap-4 mt-5">
-					{data?.data.slice(1, 5).map((item: TProduct) => (
+					{data?.data.slice(0, 4).map((item: TProduct) => (
 						<CardData key={item._id} item={item} />
 					))}
 				</div>
