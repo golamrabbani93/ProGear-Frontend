@@ -23,7 +23,7 @@ const CardData: React.FC<CardDataProps> = ({item}) => {
 				<Card hoverable className="new-card">
 					<div className=" card-compact">
 						<div className="relative overflow-hidden">
-							<Link to={`/shop/product/id`}>
+							<Link to={`/shop/product/${item._id}`}>
 								<img className="h-[200px] w-full objectImg2" src={item.image} alt={item?.name} />
 							</Link>
 
