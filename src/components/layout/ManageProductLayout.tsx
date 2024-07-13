@@ -15,6 +15,10 @@ const items = [
 				key: 'update-product',
 				label: <Link to={'/manage-products/update-product'}>Upadate Product</Link>,
 			},
+			{
+				key: 'delete-product',
+				label: <Link to={'/manage-products/delete-product'}>Delete Product</Link>,
+			},
 		],
 	},
 ];

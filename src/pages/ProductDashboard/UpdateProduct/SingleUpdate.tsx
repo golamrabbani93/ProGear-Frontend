@@ -1,16 +1,16 @@
 /* eslint-disable no-unsafe-optional-chaining */
 import {Form, Input, Button, InputNumber, Select, Skeleton} from 'antd';
 import {toast} from 'sonner';
-import {TProduct} from '../../../../redux/features/cart/cartSlice';
-import {useGetAllGategoryQuery} from '../../../../redux/features/category/CategoryApi';
+import {TProduct} from '../../../redux/features/cart/cartSlice';
+import {useGetAllGategoryQuery} from '../../../redux/features/category/CategoryApi';
 import {
 	useGetAllProductsQuery,
 	useGetSingleProductQuery,
 	useUpdateSingleProductMutation,
-} from '../../../../redux/features/product/productApi';
+} from '../../../redux/features/product/productApi';
 import {useParams} from 'react-router-dom';
 import TextArea from 'antd/es/input/TextArea';
-import {TCategory} from '../../../home/category/Category';
+import {TCategory} from '../../home/category/Category';
 
 const SingleUpdate = () => {
 	const {id} = useParams();

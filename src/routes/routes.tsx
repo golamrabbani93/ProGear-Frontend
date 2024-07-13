@@ -7,8 +7,9 @@ import SingleProduct from '../components/SingleProduct/SingleProduct';
 import Cart from '../components/cart/Cart';
 import ManageProductLayout from '../components/layout/ManageProductLayout';
 import AddProduct from '../pages/ProductDashboard/AddProduct/AddProduct';
-import UpdateProduct from '../pages/ProductDashboard/AddProduct/UpdateProduct/UpdateProduct';
-import SingleUpdate from '../pages/ProductDashboard/AddProduct/UpdateProduct/SingleUpdate';
+import UpdateProduct from '../pages/ProductDashboard/UpdateProduct/UpdateProduct';
+import SingleUpdate from '../pages/ProductDashboard/UpdateProduct/SingleUpdate';
+import DeleteProduct from '../pages/ProductDashboard/DeleteProduct/DeleteProduct';
 
 const router = createBrowserRouter([
 	{
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
 			{
 				path: 'update-product/:id',
 				element: <SingleUpdate />,
+			},
+			{
+				path: 'delete-product/',
+				element: <DeleteProduct />,
 			},
 		],
 	},

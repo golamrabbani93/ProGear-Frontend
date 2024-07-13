@@ -1,5 +1,5 @@
 import {Skeleton, Table} from 'antd';
-import {useGetAllProductsQuery} from '../../../../redux/features/product/productApi';
+import {useGetAllProductsQuery} from '../../../redux/features/product/productApi';
 import {Link} from 'react-router-dom';
 
 interface RecordType {
