@@ -4,14 +4,13 @@ const productsApi = baseApi.injectEndpoints({
 	endpoints: (builder) => ({
 		getAllProducts: builder.query({
 			query: (params) => {
-				console.log(params);
-
 				return {
 					url: '/product',
 					method: 'GET',
 					params,
 				};
 			},
+			providesTags: ['product'],
 		}),
 		getSingleProduct: builder.query({
 			query: ({id}) => {
@@ -39,6 +38,7 @@ const productsApi = baseApi.injectEndpoints({
 					body: data,
 				};
 			},
+			invalidatesTags: ['product'],
 		}),
 	}),
 });
