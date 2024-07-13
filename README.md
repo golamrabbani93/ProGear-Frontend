@@ -63,14 +63,11 @@ yarn
 
 ```bash
    npm run dev
-```
-
 # or
 
 yarn dev
 
-````
-
+```
 
 ### Configuration
 
@@ -81,7 +78,7 @@ yarn dev
  PORT=3000
  DB_URL=your_db_connection_uri
 
-````
+```
 
 ## Usage
 
