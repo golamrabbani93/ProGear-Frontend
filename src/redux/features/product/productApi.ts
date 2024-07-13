@@ -30,9 +30,23 @@ const productsApi = baseApi.injectEndpoints({
 				};
 			},
 		}),
+		updateSingleProduct: builder.mutation({
+			query: ({id, data}) => {
+				console.log(id, data);
+				return {
+					url: `/product/${id}`,
+					method: 'PUT',
+					body: data,
+				};
+			},
+		}),
 	}),
 });
 
-export const {useGetAllProductsQuery, useGetSingleProductQuery, useCreateSingleProductMutation} =
-	productsApi;
+export const {
+	useGetAllProductsQuery,
+	useGetSingleProductQuery,
+	useCreateSingleProductMutation,
+	useUpdateSingleProductMutation,
+} = productsApi;
 export default productsApi;

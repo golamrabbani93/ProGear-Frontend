@@ -6,8 +6,9 @@ import Shop from '../pages/Shop/Shop';
 import SingleProduct from '../components/SingleProduct/SingleProduct';
 import Cart from '../components/cart/Cart';
 import ManageProductLayout from '../components/layout/ManageProductLayout';
-import ProductDashboard from '../pages/ProductDashboard/ProductDashboard';
 import AddProduct from '../pages/ProductDashboard/AddProduct/AddProduct';
+import UpdateProduct from '../pages/ProductDashboard/AddProduct/UpdateProduct/UpdateProduct';
+import SingleUpdate from '../pages/ProductDashboard/AddProduct/UpdateProduct/SingleUpdate';
 
 const router = createBrowserRouter([
 	{
@@ -46,11 +47,19 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path: '',
-				element: <ProductDashboard />,
+				element: <AddProduct />,
 			},
 			{
 				path: 'add-product',
 				element: <AddProduct />,
+			},
+			{
+				path: 'update-product',
+				element: <UpdateProduct />,
+			},
+			{
+				path: 'update-product/:id',
+				element: <SingleUpdate />,
 			},
 		],
 	},

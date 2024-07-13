@@ -18,7 +18,7 @@ const AddProduct: React.FC = () => {
 	const [createProduct, {data: create}] = useCreateSingleProductMutation();
 
 	if (create) {
-		toast.success('Produc Created Successfully');
+		toast.success('Product Created Successfully');
 	}
 
 	const [form] = Form.useForm();

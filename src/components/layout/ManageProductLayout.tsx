@@ -11,6 +11,10 @@ const items = [
 				key: 'add-product',
 				label: <Link to={'/manage-products/add-product'}>Add Product</Link>,
 			},
+			{
+				key: 'update-product',
+				label: <Link to={'/manage-products/update-product'}>Upadate Product</Link>,
+			},
 		],
 	},
 ];
@@ -18,6 +22,7 @@ const ManageProductLayout = () => {
 	return (
 		<Layout className="h-full">
 			<Sider
+				className="fixed top-0"
 				breakpoint="lg"
 				collapsedWidth="0"
 				onBreakpoint={(broken) => {
