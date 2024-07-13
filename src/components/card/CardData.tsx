@@ -46,7 +46,10 @@ const CardData: React.FC<CardDataProps> = ({item}) => {
 						</div>
 						<div className="px-3 pb-3">
 							<div className="my-3 flex justify-between">
-								<Link to={`/shop/product/id`} className="hover:text-primary transiti duration-300">
+								<Link
+									to={`/shop/product/${item._id}`}
+									className="hover:text-primary transiti duration-300"
+								>
 									<h2 className="card-title font-bold">{item.name} </h2>
 								</Link>
 								<div className="price mr-3">

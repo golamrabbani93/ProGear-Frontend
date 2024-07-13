@@ -43,21 +43,21 @@ const CheckOut = () => {
 	// 	return <Loader></Loader>;
 	// }
 	// !handle billingDetails
-	const handleBillingDetails = async (data: any) => {
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		const billingDetails = {
-			name: data.name,
-			email: data.email,
-			phone: data.phone,
-			country: data.country,
-			townCity: data.townCity,
-			street: data.street,
-			orderNote: data.orderNote,
-			// products: newProducts,
-			// total: total,
-			// date: orderDate,
-			// status: 'Processing',
-		};
+	const handleBillingDetails = async () => {
+		// // eslint-disable-next-line @typescript-eslint/no-unused-vars
+		// const billingDetails = {
+		// 	name: data.name,
+		// 	email: data.email,
+		// 	phone: data.phone,
+		// 	country: data.country,
+		// 	townCity: data.townCity,
+		// 	street: data.street,
+		// 	orderNote: data.orderNote,
+		// 	// products: newProducts,
+		// 	// total: total,
+		// 	// date: orderDate,
+		// 	// status: 'Processing',
+		// };
 		showModal();
 	};
 
@@ -332,7 +332,7 @@ const CheckOut = () => {
 				)}
 			>
 				<Select
-					defaultValue="Lowest to Highest"
+					defaultValue="Cash on Delivery"
 					style={{width: ' 100%'}}
 					options={[
 						{value: '1', label: 'Cash on Delivery'},

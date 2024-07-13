@@ -1,4 +1,5 @@
-const Rating = ({rating}) => {
+/* eslint-disable @typescript-eslint/no-unused-vars */
+const Rating = ({rating}: {rating: number}) => {
 	return (
 		<div className="rating">
 			{[1, 2, 3, 4, 5].map((r) => (
