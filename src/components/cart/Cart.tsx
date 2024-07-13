@@ -107,7 +107,7 @@ const Cart = () => {
 	return (
 		<div className="container mx-auto text-center">
 			<Table<Product> dataSource={data} columns={columns} />
-			<CartTotal carts={carts} />
+			{carts?.length > 0 && <CartTotal carts={carts} />}
 		</div>
 	);
 };

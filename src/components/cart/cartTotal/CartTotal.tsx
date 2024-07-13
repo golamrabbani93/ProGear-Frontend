@@ -17,9 +17,14 @@ const CartTotal: React.FC<CartToltalProps> = ({carts}) => {
 
 	useEffect(() => {
 		if (!isLoading) {
-			const outOfStock = products.filter((product: TProduct) => ids.includes(product._id));
-			if (outOfStock) {
+			const outOfStock = products.filter(
+				(product: TProduct) => ids.includes(product._id) && product?.stock === 0,
+			);
+			if (outOfStock.length > 0) {
+				// Check if there are any out-of-stock products
 				setOutOfStock(true);
+			} else {
+				setOutOfStock(false); // Reset if no out-of-stock products
 			}
 		}
 	}, [data, ids, products, isLoading]);

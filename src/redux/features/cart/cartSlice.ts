@@ -11,7 +11,7 @@ export interface TProduct {
 	rating?: number;
 	brand: string;
 	quantity: number;
-	stock?: boolean;
+	stock: number;
 }
 export interface ProductsState {
 	products: TProduct[];
