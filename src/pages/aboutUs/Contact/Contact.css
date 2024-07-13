@@ -1,37 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.objectImg {
-	object-fit: cover;
-}
-
-.action-link {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 60px;
-	background: black;
-	padding: 0 20px;
-	visibility: hidden;
-	opacity: 0;
-	transition: all 0.5s ease;
-	transform: translateY(60px);
-}
-.new-card:hover .action-link {
-	visibility: visible;
-	opacity: 1;
-	transform: translateY(0px);
-}
-
-.ant-card-body {
-	padding: 0 !important;
-}
-
-.containerContact {
+.container {
 	background: #fff;
 	width: 800px;
 	height: 450px;
