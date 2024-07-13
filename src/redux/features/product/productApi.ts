@@ -31,7 +31,6 @@ const productsApi = baseApi.injectEndpoints({
 		}),
 		updateSingleProduct: builder.mutation({
 			query: ({id, data}) => {
-				console.log(id, data);
 				return {
 					url: `/product/${id}`,
 					method: 'PUT',
@@ -42,7 +41,6 @@ const productsApi = baseApi.injectEndpoints({
 		}),
 		deleteSingleProduct: builder.mutation({
 			query: (id) => {
-				console.log('🚀🚀: id', id);
 				return {
 					url: `/product/${id}`,
 					method: 'DELETE',

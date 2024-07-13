@@ -10,6 +10,7 @@ import AddProduct from '../pages/ProductDashboard/AddProduct/AddProduct';
 import UpdateProduct from '../pages/ProductDashboard/UpdateProduct/UpdateProduct';
 import SingleUpdate from '../pages/ProductDashboard/UpdateProduct/SingleUpdate';
 import DeleteProduct from '../pages/ProductDashboard/DeleteProduct/DeleteProduct';
+import CheckOut from '../components/Checkout/Checkout';
 
 const router = createBrowserRouter([
 	{
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
 			{
 				path: 'shop/category/:name',
 				element: <Shop></Shop>,
+			},
+			{
+				path: 'shop/checkout',
+				element: <CheckOut />,
 			},
 		],
 	},
