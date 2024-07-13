@@ -4,7 +4,7 @@ import {TProduct} from '../../../redux/features/cart/cartSlice';
 import {useGetAllProductsQuery} from '../../../redux/features/product/productApi';
 
 const NewArrival = () => {
-	const {data, isLoading} = useGetAllProductsQuery({sort: ''}, {pollingInterval: 3000});
+	const {data, isLoading} = useGetAllProductsQuery({sort: ''}, {pollingInterval: 30000});
 	if (isLoading) {
 		return <Loader />;
 	}

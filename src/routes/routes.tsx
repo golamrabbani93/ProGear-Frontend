@@ -5,6 +5,9 @@ import AboutUs from '../pages/aboutUs/AboutUs';
 import Shop from '../pages/Shop/Shop';
 import SingleProduct from '../components/SingleProduct/SingleProduct';
 import Cart from '../components/cart/Cart';
+import ManageProductLayout from '../components/layout/ManageProductLayout';
+import ProductDashboard from '../pages/ProductDashboard/ProductDashboard';
+import AddProduct from '../pages/ProductDashboard/AddProduct/AddProduct';
 
 const router = createBrowserRouter([
 	{
@@ -34,6 +37,20 @@ const router = createBrowserRouter([
 			{
 				path: 'shop/category/:name',
 				element: <Shop></Shop>,
+			},
+		],
+	},
+	{
+		path: '/manage-products',
+		element: <ManageProductLayout />,
+		children: [
+			{
+				path: '',
+				element: <ProductDashboard />,
+			},
+			{
+				path: 'add-product',
+				element: <AddProduct />,
 			},
 		],
 	},
